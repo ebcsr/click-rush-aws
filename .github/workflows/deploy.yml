@@ -1,0 +1,25 @@
+name: Deploy Frontend to AWS S3
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${github-s3-deployer}
+          aws-secret-access-key: ${wN3V*s3#}
+          aws-region: ${ap-southeast-2}
+
+      - name: Deploy frontend to S3
+        run: |
+          aws s3 sync frontend/ s3://${{ secrets.S3_BUCKET_NAME }} --delete
