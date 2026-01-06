@@ -16,9 +16,9 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          aws-access-key-id: github-s3-deployer
-          aws-secret-access-key: wN3V*s3#
-          aws-region: ap-southeast-2 
+          aws-access-key-id: aws-click-rush
+          aws-secret-access-key: new_cY(4nKb%
+          aws-region: ap-southeast-2
 
       - name: Deploy frontend to S3
         run: |
